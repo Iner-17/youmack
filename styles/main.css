@@ -208,6 +208,13 @@ body {
         transform: translateX(0);
     }
 }
+
+
+
+
+
+
+
 @media (max-width: 1150px) {
 
 
@@ -264,7 +271,16 @@ body {
 
 
 /* ------------------------------------------ EVENT HIGHTLIGHTSSS ----------------------------------------------- */
-
+@keyframes appear{
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 .event-highlights {
     margin-top: 30vh;
 }
@@ -275,12 +291,14 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 80vh;
+   
 }
 
 .left-content {
     position: relative;
-    /* flex-grow: 1; */
+    flex-grow: 1;
     width: 55vw;
+    
 }
 
 .left-content .numTh{
@@ -293,11 +311,13 @@ body {
 
 .text-content {
     position: relative;
-
     justify-self: flex-end;
     margin-top: -10px;
     margin-left: 10vw;
     padding: 3vh 5vw 3vh 2vw;
+    animation: appear forwards;
+	animation-timeline: view();
+    animation-range: entry 0% cover 50% ;
 
 }
 
@@ -326,10 +346,13 @@ body {
 }
 
 .right-content {
-    /* flex-grow: 1; */
+    flex-grow: 1;
     position: relative;
     width: 55vh; 
     height: 50vh; 
+    animation: appear forwards;
+	animation-timeline: view();
+    animation-range: entry 0% cover 50% ;
 }
 
 /* Base Styles */
@@ -344,25 +367,42 @@ body {
 .background-image {
     top: 0;
     right: 70px;
-    z-index: 1; /* Default background layer */
+    z-index: 1; 
+    transform: skew(5deg);
+
+    transition: .5s ease-in-out;
+
 }
 
 .foreground-image {
     bottom: 0;
     left: 10px;
-    z-index: 2; /* Default foreground layer */
+    z-index: 2; 
+    transform: skew(-3deg);
+
+    transition: .5s ease-in-out;
+
+}
+.background-image:hover {
+    z-index: 3;
+    transform: scale(1.1);
+}
+.foreground-image:hover {
+    z-index: 1;
+    transform: scale(1.1);
+
 }
 
 /* Toggle Effect when checkbox is checked */
-#toggle-image:checked ~ .background-image-wrapper .background-image {
-    z-index: 2; /* Bring background image to the front */
+/* #toggle-image:checked ~ .background-image-wrapper .background-image {
+    z-index: 2;
     
-}
+} */
 
-#toggle-image:checked ~ .foreground-image-wrapper .foreground-image {
-    z-index: 1; /* Send foreground image to the back */
+/* #toggle-image:checked ~ .foreground-image-wrapper .foreground-image {
+    z-index: 1; 
     
-}
+} */
 
 
 @media (max-width: 1080px) {
