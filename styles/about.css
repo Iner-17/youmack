@@ -1,3 +1,4 @@
+
 :root {
     --dark-bg: #13171C;
     --dark-bg2: #181E27;
@@ -12,7 +13,7 @@
     --text-red-lowopacity: #ef44441f;
     --orange-red-gradient: linear-gradient(to left, var(--orange-cta), var(--red-cta));
 }
- 
+
 .about-header {
     max-width: 1563px;
     margin: 0 auto;
@@ -166,4 +167,3 @@ hr {
     width: 100%;
     min-width: 350px;
 }
-

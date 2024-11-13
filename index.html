@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,52 +13,60 @@
 <body>
     
     <nav>
-        <div class="logo">
+        <!-- Logo Section -->
+        <a href="index.html" class="logo">
             <img src="images/logo.png" alt="UMAK Logo">
-            
-        </div>
-       
+        </a>
+    
+        <!-- Sidebar Toggle Checkbox for Mobile -->
         <input type="checkbox" id="sidebar-active">
-
+    
+        <!-- Burger Menu Icon for Opening Sidebar -->
         <label for="sidebar-active" id="burger" class="open-sidebar">
-
             <div class="line1 burger-line"></div>
             <div class="line2 burger-line"></div>
             <div class="line3 burger-line"></div>
-
         </label>        
-        
+    
+        <!-- Navigation Links Section -->
         <div class="nav-links">
+            <!-- Close Icon for Closing Sidebar -->
             <label for="sidebar-active" id="close" class="close-sidebar">
-
                 <div class="line1 close-line"></div>
                 <div class="line2 close-line"></div>
-
-            </label>       
-            
-            <a class="home-link" href="#">Home</a>
-            <a class="about-link" href="about.html">About Us</a>
-            <a class="gallery-link" href="gallery.html">Gallery</a>
-            <a class="contact-link" href="#" id="contact-link">Contact Us</a>
+            </label>
+    
+            <!-- List of Navigation Links -->
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li id="contact-li"><a class="contact-link" href="#" id="contact-link">Contact Us</a></li>
+            </ul>
         </div>
     </nav>
+    
 
     <div class="container1 container">
         <section class="hero-page">
+            <div class="right-hero">
+                <img src="images/logo.png" alt="group of tech challengers">
+            </div>
             <div class="left-hero">
                 <p id="umak">University of Makati</p>
                 <h1>Unleash Your Potential at the <span>UMAK IT Olympics!</span></h1>
                 <p>Join us as UMAK’s brightest minds compete in coding, design, and tech challenges. Get all event info here!</p>
                 <div class="buttons">
-                    <button id="border-white">Read More</button>
-                    <button>Join now</button>
+                    <button class="border-white">Read More</button>
+                    <button class="btn2">Join now</button>
                 </div>
-                
-            </div>
-            <div class="right-hero">
-                <img src="images/techgroup.png" alt="group of tech challengers">
             </div>
         </section>
+
+        <div class="right-torch">
+            <img src="images/torch.png" alt="">
+        </div>
     </div>
 
     <div class="event-highlights container">
@@ -75,108 +84,23 @@
                 </div>
             </div>
             <div class="right-content">
-                <img src="images/esport.jpg" alt="">
-                <img src="images/quiz bee.jpg" alt="" id="img-right">
+                <input type="checkbox" id="toggle-image" hidden>
+                
+                <!-- Wrap the images in labels for toggling -->
+                <label for="toggle-image" class="background-image-wrapper">
+                    <img src="images/esport.jpg" alt="" class="background-image">
+                </label>
+                
+                <label for="toggle-image" class="foreground-image-wrapper">
+                    <img src="images/quiz bee.jpg" alt="" class="foreground-image">
+                </label>
             </div>
         </div>
-
-
     </div>
 
-    <div class="container2 container">
-        <section class="brief-info">
-            <h1 class="participate">How To Participate</h1>
-            <div class="p-img">
-                <p>Register <a href="#">here</a> to join the IT Olympics! Choose your competition categories to showcase your skills. Below are the categories for the IT Olympics:</p>
-            </div>
-            <section class="categories">
-                <div>
-                    <h1>Java Programming</h1>
-                    <p>Test your skills by solving coding challenges and building applications using Java.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                    
-                </div>
-                <div>
-                    <h1>.NET Programming using C#</h1>
-                    <p>Compete in developing robust applications with C# in the .NET framework.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>PC Assembly/Disassembly</h1>
-                    <p>Showcase your hardware skills by assembling and disassembling PCs efficiently.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Networking</h1>
-                    <p>Demonstrate your knowledge of network configurations, protocols, and troubleshooting.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Web Design</h1>
-                    <p>Create stunning and functional websites using HTML and CSS to impress the judges.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Quiz-bee</h1>
-                    <p>Participate in a fast-paced quiz competition to test your IT knowledge across various topics.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>E-Sports</h1>
-                    <p>Compete in popular video games and demonstrate your gaming prowess in an exciting tournament setting.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Python Programming</h1>
-                    <p>Solve problems and create innovative solutions using Python in this coding challenge.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Cybersecurity</h1>
-                    <p>Showcase your skills in protecting systems and data through various security challenges.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Android App Development</h1>
-                    <p>Design and develop an Android application that stands out in functionality and user experience.</p>
-                    <div class="cat-cta">
-                        <button>Register</button>
-                        <a>Read More</a>
-                    </div>
-                </div>
-            </section>
-            
-        </section>
-    </div>
+    
 
-
+<!-- 
     <div class="sponsors-container container">
 
         <h1 class="sponsor-h1">Event Sponsors</h1>
@@ -209,7 +133,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 
     <div class="container3 container">
@@ -219,23 +143,21 @@
             <h1>Contact us</h1>
             
             <div class="contact-card">
-                <form action="" class="left-side-contact">
+                <div class="left-side-contact">
                     <h1 id="get-in-touch">Get in touch</h1>
-                    <p>You can directly contact us at:</p>
+                    <p id="directly-contact-us">You can directly contact us at:</p>
                     <p id="sub-p"><strong>Email:</strong><i> &nbsp;umak@gmail.com</i></p>
                     <p id="sub-p"><strong>Phone:</strong><i> &nbsp;09681547851</i></p>
                     <p id="sub-p"><strong>Facebook:</strong><i> &nbsp;University of Makati - UMAK</i></p>
-                </form>
+                    <p id="sub-p"><strong>Address:</strong><i> &nbsp;Dr Jose P. Rizal Ext, West Rembo, Taguig, 1644 Metro Manila</i></p>
+                </div>
                 <div class="right-side-contact">
                     <h1 id="leave-message">Leave a message </h1>
                     <input type="text" placeholder="Name">
                     <input type="email" placeholder="Email">
                     <input type="text" placeholder="Phone Number">
-                    <textarea name="" id="message" placeholder="Message..."></textarea>
-                    <label class="container">Are you a robot?
-                        <input type="checkbox" checked="checked">
-                        <span class="checkmark"></span>
-                      </label>
+                    <textarea name="" id="message" placeholder="Message..." rows="2"></textarea>
+                    
                     <button>Submit</button>
                 </div>
             </div>
@@ -257,9 +179,6 @@
             <p>All rights reserved @UMAK2024</p>
         </div>
 
-        <div class="right-footer">
-            <p>Dr Jose P. Rizal Ext, West Rembo, Taguig, 1644 Metro Manila</p>
-        </div>
     </footer>
 </body>
 </html>

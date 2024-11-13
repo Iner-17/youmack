@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 :root {
@@ -17,25 +18,20 @@
     --text-color: #f0f0f0;
     --paragraph-color: #cdcaca;
     --link-color: #3282F6;
-    --text-red-lowopacity: #ef44441f;
+    --text-red-lowopacity: #ef44442d;
     --orange-red-gradienthor: linear-gradient(to left, var(--orange-cta), var(--red-cta));
     --orange-red-gradientvert: linear-gradient(to bottom, var(--orange-cta), var(--red-cta));
 }
 
-html {
-    font-size: 12pt;
-    font-family: 'roboto', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-button {
-    
-}
 
 p {
     font-family: "Montserrat", sans-serif;
 }
 
 body {
+    overflow-x: hidden;
+    max-width: 100vw;
     background-color: var(--dark-bg);
 }
 
@@ -44,18 +40,21 @@ body {
     min-height: auto;
     margin: 0 auto;
     padding: 0 3rem;
+    
 }
 
 /* ------------------------------------------HEROOOO SECTION ----------------------------------------------- */
 
 .hero-page {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: row;
 
-    margin-top: 2em;
-    min-height: 60vh;
+    position: relative;
+    gap: 2em;
+    margin-top: 3em;
+    min-height: 70vh;
     width: 100%;
 }
 
@@ -64,7 +63,7 @@ body {
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    width: 80%;
+    width: 50%;
     height: 100%;
 }
 
@@ -75,7 +74,7 @@ body {
 .left-hero #umak{
     position: relative;
     font-size: 18px;
-    color: var(--orange-cta);
+    color: var(--orange-cta)        ;
     padding-left: 50px;
 }
 
@@ -92,7 +91,7 @@ body {
 
 .left-hero h1{
     width: 100%;
-    font-size: 3vw;
+    font-size: 3.5em;
 }
 
 .left-hero h1 span{
@@ -103,21 +102,21 @@ body {
 
 .left-hero p{
     margin-top: .5em;
-    font-size: 1.4vw;
+    font-size: 1.4em;
     word-spacing: 3px;
     line-height: 35px;
 }
 
 .left-hero button {
     color: var(--dark-bg);
-    font-size: 1.2vw;
+    font-size: 1.4em;
     padding: 8px 28px;
     border: none;
     border-radius: 4px;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     margin-top: 1.2em;
-    background-color: var(--red-cta);
+    background-color: var(--orange-cta);
     cursor: pointer;
     box-shadow: 5px 6px #000;
 }
@@ -125,13 +124,14 @@ body {
 .right-hero {
     display: flex;
     align-items: center;
-    justify-content: end;
-    width: 80%;
-    height: 100%;
+    justify-content: start;
+    
 }
 
 .right-hero img{
-    width: 100%;
+    width: 100%;          /* Scales the image based on its parent container */
+    max-width: 400px;     /* Maximum width */
+    min-width: 200px; 
 }
 
 .buttons {
@@ -139,17 +139,66 @@ body {
     gap: 20px;
 }
 
-#border-white {
-    background-color: #3d3c3c54;
+.buttons .border-white {
+    background-color: transparent;
     box-shadow: none;
     color: var(--text-color);
     border: 2px solid var(--paragraph-color);
     font-weight: 200;
 }
+.btn2{
+    background-color: var(--orange-cta);
+    box-shadow: none;
+    color: var(--text-color);
+    border: 2px solid white;
+    font-weight: 200;
+}
+
+.right-torch {
+    position: absolute;
+    right: -450px;
+    top: 250px;
+    transform: rotate(-10deg);
+    overflow: hidden !important;
+    
+}
+
+.right-torch img {
+    height: 900px;
+    opacity: 20%;
+    overflow: hidden !important;
+}
+
+@media (max-width: 1150px) {
+
+
+    .right-torch {
+        display: none;
+    }
+
+    .left-hero h1 {
+        font-size: 3rem; /* Corrected font size unit */
+    }
+
+    .left-hero p {
+        font-size: 1.2rem;
+        text-shadow: 5px 5px #000;
+    }
+
+    .left-hero button {
+        font-size: 1.2rem;
+    }
+}
 
 
 @media (max-width: 1050px) {
+    .container1 {
+        height: 80vh;
+    }
+
     .hero-page {
+        justify-content: start;
+        align-items: start;
         flex-direction: column;
     }
 
@@ -157,16 +206,20 @@ body {
         order: -1;
     }
 
-    .left-hero h1 {
-        text-align: center;
-        font-size: 3rem;
+    .left-hero {
+        width: 100%;
+        height: 100%;
     }
-    .left-hero p {
-        font-size: 1.4rem;
+
+    .right-hero img  {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.1;
+        z-index: -10;
     }
-    .left-hero button {
-        font-size: 1.4rem;
-    }
+
 }
 
 
@@ -174,29 +227,29 @@ body {
 /* ------------------------------------------ EVENT HIGHTLIGHTSSS ----------------------------------------------- */
 
 .event-highlights {
-
     margin-top: 10vh;
-
 }
 
 
 .event-container {
     display: flex;
-    justify-content: space-between;
-    align-items: start;
-
-    min-height: 60vh;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 80vh;
 }
 
 .left-content {
-    flex-grow: 1;
-    width: 50vw;
+    position: relative;
+    /* flex-grow: 1; */
+    width: 55vw;
 }
 
 .left-content .numTh{
     color: var(--text-red-lowopacity);
-    font-size: 13em;
+    font-size: 15em;
     font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: -300px;
 }
 
 .text-content {
@@ -234,170 +287,102 @@ body {
 }
 
 .right-content {
+    /* flex-grow: 1; */
     position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-    width: 40%;
-    height: 100%;
+    width: 55vh; 
+    height: 50vh; 
 }
 
-.right-content img{  
-    height: 250px;
-
-    min-height: 200px;
-}
-
-.right-content #img-right {
-    align-self: flex-end;
-    margin-top: 33px;
-}
-
-
-/* ------------------------------------------ How to Particiapte ----------------------------------------------- */
-
-
-.container2 {
-    border-radius: 20px;
-    margin-top: 5em;
-    padding: 3rem 3rem;
-    background-color: var(--dark-bg2);
-}
-
-.brief-info {
+/* Base Styles */
+.background-image, .foreground-image {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.brief-info .participate{
-    position: relative;
-    font-size: 3vw;
-    color: var(--text-color);
-}
-
-.brief-info .participate::after{
-    content: "";
-    
     position: absolute;
-    bottom: -12px;
-    left: 0;
-    height: 9px;
-    width: 70%;
-    border-radius: 2px;
-    background: linear-gradient(to right, var(--orange-cta), var(--red-cta));
+    border-radius: 25px;
+    transition: filter 0.3s;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
 }
 
-.brief-info .p-img {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.background-image {
+    top: 0;
+    right: 70px;
+    
+    z-index: 1; /* Default background layer */
 }
 
-.brief-info .p-img p{
-    width: 80%;
-    font-size: 1.2vw;
-    margin-top: 2.5em;
-    color: var(--paragraph-color);
-    text-indent: 50px;
-    text-align: center;
+.foreground-image {
+    bottom: 0;
+    left: 10px;
+    z-index: 2; /* Default foreground layer */
 }
 
-.brief-info a{
-    color: var(--orange-cta);
+/* Toggle Effect when checkbox is checked */
+#toggle-image:checked ~ .background-image-wrapper .background-image {
+    z-index: 2; /* Bring background image to the front */
+    
 }
 
-.categories {
-    margin-top: 2em;
-    width: 100%;
-    display: grid;     
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Create 2 equal columns */
-    grid-gap: 30px;                /* Space between grid items */
-    padding: 20px; 
+#toggle-image:checked ~ .foreground-image-wrapper .foreground-image {
+    z-index: 1; /* Send foreground image to the back */
+    
 }
 
-.categories div:not(.cat-cta) {
-    padding: 20px 30px;
-    border-radius: 12px;
-    background-color: var(--dark-bg3);
-}
 
-.categories div h1{
-    font-size: 1.5vw;
-    color: var(--text-color);
-}
-
-.categories div p{
-    margin-top: 10px;
-    font-size: 1.1vw;
-    color: var(--paragraph-color);
-    margin-left: 10px;
-}
-
-.categories div button{
-    color: var(--dark-bg);
-    font-size: 1vw;
-    padding: 8px 18px;
-    border: none;
-    border-radius: 4px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    background-color: var(--red-cta);
-    cursor: pointer;
-    box-shadow: 3px 3px #000;
-}
-
-.cat-cta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-top: 1.2em;
-}
-
-.cat-cta a{
-    height: 100%;
-    font-size: 18px;
-    text-decoration: underline;
-    font-family: "Montserrat";
-}
-
-@media (max-width: 1050px) {
-
-    .brief-info .participate {
-        font-size: 3rem;
+@media (max-width: 1080px) {
+    .event-container {
+        flex-direction: column;
+        margin-bottom: 10em;
     }
-    .p-img p {
-        font-size: 1.4rem !important;
-    }
-    .categories div h1 {
-        font-size: 1.5rem;
-    }
-    .categories div p {
-        font-size: 1.2rem;
-    }
-    .categories div button {
-        font-size: 1.2rem;
-    }
-}
 
-.container3 {
-    margin-top: 5em;
-}
+    .left-content {
+       flex-grow: 1;
+       width: 100%;
+    }
 
-.contact-page {
+    .left-content .numTh{
+        color: var(--text-red-lowopacity);
+        font-size: 10em;
+        font-family: "Montserrat", sans-serif;
+        position: absolute;
+        top: -200px;
+    }
+
+    .text-content {
+        position: relative;
+    
+        justify-self: flex-end;
+        margin-left: 2vw;
+        padding: 3vh 5vw 3vh 4vw;
+    
+    }
+
+    .right-content {
+        margin-top: 20px;
+        width: 50vh; 
+        height: 75vh; 
+    }
+
+    .background-image {
+        top: 0;
+        right: 0;
+        z-index: 1; /* Default background layer */
+    }
+    
+    .foreground-image {
+        bottom: 0;
+        left: 0;
+        z-index: 2; /* Default foreground layer */
+    }
+
     
 
 }
+
+
 
 
 /* ------------------------------------------SPONSORS SRCTIOOON ----------------------------------------------- */
 
-.sponsors-container {
+/* .sponsors-container {
     margin-top: 10vh;
 
 }
@@ -429,8 +414,6 @@ body {
 }
 
 
-.sponsors-container div{
-}
 
 .sponsors-container .sponsor {
     display: grid;
@@ -449,205 +432,157 @@ body {
     background-color: var(--dark-bg2);
     border-radius: 10px;
     height: 250px;
-}
+} */
 
 
 /* ------------------------------------------CONTACT SECTION ----------------------------------------------- */
-
+.contact-page {
+}
 .contact-page .umak-p {
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 1.2em;
     color: var(--orange-cta);
     line-height: 22px;
 }
 
-.white {
-    color: var(--paragraph-color) !important;
-    margin-top: 10px;
-    font-size: 1.6rem !important;
-}
 
 .contact-page h1 {
     text-align: center;
-    font-size: 5vw;
+    font-size: 5em;
     font-weight: 300;
     color: var(--text-color);
     text-shadow: 3px 3px #000;
 }
 
+.contact-page p {
+    font-size: 1.4em;
+}
+
+/* ssss */
 #get-in-touch {
-    font-size: 2vw;
+    text-align: start;
+    font-size: 2rem;
 }
 
 #leave-message {
-    font-size: 2vw;
+    font-size: 2rem;
     margin-bottom: 12px;
 }
 
-.right-side-contact {
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-    margin-left: 30px;
-    padding: 3rem 3rem 3rem 0rem;
-    height: 100%;
-    width: 100%;
+#directly-contact-us {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    color: var(--text-color);
 }
 
-.right-side-contact p{
-    color: var(--dark-bg3) !important;
+#sub-p {
+    margin: 5px 0;
 }
 
-.right-side-contact #message{
-    font-size: 1.22vw;
-    padding-top: 10px;
-    height: 150px;
-    width: 100%;
-}
+/* Right side contact styling */
 
-.right-side-contact button{
-    cursor: pointer;
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    border-radius: 5px;
-    font-size: 16pt;
-    padding: 12px;
-    margin-top: 12px;
-    border: none;
-    background-color: var(--red-cta);
-}
-
+/* Contact card styling */
 .contact-page .contact-card {
     display: flex;
     justify-content: center;
     align-items: stretch;
     position: relative;
-
+    flex-direction: row;
     width: 60vw;
-    height: 70vh;
     margin: 5vh auto 10vw;
     background-color: var(--dark-bg3);
-    border-radius: 10px;
 }
 
-.contact-page .contact-card p{
+
+.right-side-contact {
     display: flex;
-    width: 100%;
-    align-self: flex-start;
-    text-align: start;
-    color: var(--paragraph-color);
-    font-size: 16pt;
-    padding: 0 0 3rem 0;
-}
-
-.contact-page .contact-card #sub-p{
-    padding: 0 0 1rem 0;
-}
-
-.contact-page .contact-card .left-side-contact{
-    display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
+    justify-content: flex-end;
     flex-direction: column;
-    padding: 3rem 0 0rem 3rem;
-    border-right: 0.7px solid #494949;
-    padding-right: 30px;
-    height: 100%;
-    width: 80%;
-    background-color: var(--dark-bg2);
+    margin-left: 30px;
+    width: 60%;
+    padding: 2em 2em 2em 0;
 }
 
+/* Styling for paragraph text */
+.right-side-contact p {
+    color: var(--dark-bg3) !important;
+}
 
-.contact-page .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
+/* Styling for textarea */
+.right-side-contact #message {
+    font-size: 1.4rem;
+    padding-top: 10px;
+    height: 150px;
     width: 100%;
-    align-self: flex-start;
-    margin-top: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    resize: none;
+    box-sizing: border-box;
+}
 
-    color: var(--paragraph-color);
-  }
-  
-  /* Hide the browser's default checkbox */
-  .contact-page .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-.contact-page input, textarea {
-    font-size: 1.12vw;
+/* Styling for input fields and textarea */
+.right-side-contact input,
+.right-side-contact textarea {
+    font-size: 1.4rem;
     width: 100%;
-    margin-bottom: 25px;
-    padding: 14px 0 14px 20px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
     font-family: "Montserrat", sans-serif;
     background-color: transparent;
     border: 1px solid rgb(104, 98, 78);
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--paragraph-color);
-    outline: none;
-    resize: none;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.right-side-contact button {
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    background-color: var(--red-cta);
+    color: #fff;
+    box-sizing: border-box;
 }
 
 
-.contact-page input:focus {
-    border-color: var(--orange-cta);
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+
+.contact-page .contact-card .left-side-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 2em 2em 2em;
+    border-right: 0.7px solid #494949;
+    width: 40%;
+    background-color: var(--dark-bg2);
+    height: auto;
 }
 
+/* Responsive design adjustments */
+@media (max-width: 1080px) {
+ 
+   
+    .contact-page .contact-card {
+        width: 80vw;
+        flex-direction: column;
+    }
+
+    .contact-page .right-side-contact {
+        width: 100%;
+        margin-left: 0;
+        padding: 2em;
+    }
+
+    .contact-page .contact-card .left-side-contact {
+        width: 100%;
+    }
+
+
+    #get-in-touch, #leave-message {
+        font-size: 22ptpt;
+    }
+   
+}
