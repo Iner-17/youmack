@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
     margin: 0;
@@ -23,11 +20,11 @@
     --orange-red-gradientvert: linear-gradient(to bottom, var(--orange-cta), var(--red-cta));
 }
 
-
+/* 
 
 p {
     font-family: "Montserrat", sans-serif;
-}
+} */
 
 body {
     overflow-x: hidden;
@@ -47,14 +44,13 @@ body {
 
 .hero-page {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-
+    /* flex-direction: row; */
     position: relative;
     gap: 2em;
-    margin-top: 3em;
-    min-height: 70vh;
+    /* margin-top: 0em; */
+    min-height: 80vh;
     width: 100%;
 }
 
@@ -65,6 +61,9 @@ body {
     justify-content: center;
     width: 50%;
     height: 100%;
+    animation: titleAnimation 2.5s forwards; 
+    animation-delay: 2s; 
+    opacity: 0;
 }
 
 .left-hero h1, p{
@@ -91,7 +90,7 @@ body {
 
 .left-hero h1{
     width: 100%;
-    font-size: 3.5em;
+    font-size: 3rem;
 }
 
 .left-hero h1 span{
@@ -102,7 +101,7 @@ body {
 
 .left-hero p{
     margin-top: .5em;
-    font-size: 1.4em;
+    font-size: 1.2rem;
     word-spacing: 3px;
     line-height: 35px;
 }
@@ -129,9 +128,11 @@ body {
 }
 
 .right-hero img{
-    width: 100%;          /* Scales the image based on its parent container */
-    max-width: 400px;     /* Maximum width */
-    min-width: 200px; 
+    margin-right: 20px;
+    width: 20rem;        
+    animation: modernAnimation 3s;
+
+    
 }
 
 .buttons {
@@ -156,19 +157,57 @@ body {
 
 .right-torch {
     position: absolute;
-    right: -450px;
-    top: 250px;
+    right: -380px;
+    top: 200px;
     transform: rotate(-10deg);
-    overflow: hidden !important;
+    /* overflow: hidden !important; */
     
 }
 
 .right-torch img {
-    height: 900px;
+    height: 650px;
     opacity: 20%;
     overflow: hidden !important;
 }
+/* ========================Keyframes========================== */
+@keyframes slide {
+    from{
+        transform: translateX(100%);
+    }to{    
+        transform: translateX(0);
+        opacity: 1;
+    }
+} 
 
+@keyframes modernAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(100%) scale(1) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(100%) scale(1.3) rotate(15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1) rotate(0deg);
+        
+    }
+}
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 @media (max-width: 1150px) {
 
 
@@ -227,7 +266,7 @@ body {
 /* ------------------------------------------ EVENT HIGHTLIGHTSSS ----------------------------------------------- */
 
 .event-highlights {
-    margin-top: 10vh;
+    margin-top: 30vh;
 }
 
 
@@ -305,7 +344,6 @@ body {
 .background-image {
     top: 0;
     right: 70px;
-    
     z-index: 1; /* Default background layer */
 }
 
