@@ -130,7 +130,7 @@ body {
 .right-hero img{
     margin-right: 20px;
     width: 20rem;        
-    animation: modernAnimation 3s;
+    animation: logoAnimations 3s;
 
     
 }
@@ -179,7 +179,7 @@ body {
     }
 } 
 
-@keyframes modernAnimation {
+@keyframes logoAnimations {
     0% {
         opacity: 0;
         transform: translateX(100%) scale(1) rotate(0deg);
@@ -454,63 +454,6 @@ body {
     
 
 }
-
-
-
-
-/* ------------------------------------------SPONSORS SRCTIOOON ----------------------------------------------- */
-
-/* .sponsors-container {
-    margin-top: 10vh;
-
-}
-.sponsors-container p {
-    font-size: 18pt;
-    margin-bottom: 20px;
-}
-
-.sponsor-h1 {
-    position: relative;
-
-    display: inline-block;
-    font-size: 3vw;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-.sponsor-h1::after {
-    content: "";
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateX(90px);
-    width: 80px;
-    height: 8px;
-    border-radius: 3px;
-    background: var(--orange-red-gradienthor);
-    
-}
-
-
-
-.sponsors-container .sponsor {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 50px;
-
-}
-
-.sponsors-container .sponsor .item{
-    color: var(--paragraph-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--dark-bg2);
-    border-radius: 10px;
-    height: 250px;
-} */
 
 
 /* ------------------------------------------CONTACT SECTION ----------------------------------------------- */
