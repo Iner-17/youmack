@@ -20,11 +20,6 @@
     --orange-red-gradientvert: linear-gradient(to bottom, var(--orange-cta), var(--red-cta));
 }
 
-/* 
-
-p {
-    font-family: "Montserrat", sans-serif;
-} */
 
 body {
     overflow-x: hidden;

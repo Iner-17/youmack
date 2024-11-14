@@ -53,7 +53,6 @@ body{
 .logo img{ 
     width: 80px;
     animation: appearRound 2s;
-
 }
 
 
@@ -131,7 +130,7 @@ nav ul li.active a {
     background-color: var(--orange-cta);
     border: 2px solid var(--orange-cta);
     color: var(--text-color);
-    box-shadow: 0 0 15px #eda1a1;
+    box-shadow: 0 0 15px orange;
 }
 
 
